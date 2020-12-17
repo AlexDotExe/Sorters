@@ -1,0 +1,15 @@
+<body> 
+    
+    <div class = "columncenter">
+        <div *ngFor = "let item of nums; let i = index" [ngStyle] = 'styleObject(i)' class =" bar"></div>
+    </div>
+        <!-- <img [ngStyle]="styleObject()" src = "assets/images/bar.png"/> -->
+        
+    
+    <select [(ngModel)] = "selectedAmount" (ngModelChange) ="selected($event)">
+            <option *ngFor="let amount of amounts" [ngValue] ="amount" >{{amount}}</option>
+    </select>
+    
+    <button (click) = 'sort()' >Sort</button>
+    <p class='works'>Sorted in {{time}} Quick-sort works with time complexity O(nlogn)</p>    
+</body>
