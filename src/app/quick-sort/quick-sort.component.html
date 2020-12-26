@@ -1,9 +1,9 @@
 <body> 
     
     <div class = "columncenter">
-        <div *ngFor = "let item of nums; let i = index" [ngStyle] = 'styleObject(i)' class =" bar"></div>
+        <div #refEl  *ngFor = "let item of dummy; let i = index;trackBy: trackByFn  "  [ngStyle] = 'styles[i]'  class =" bar">{{getSrc(i,refEl)}}</div>
     </div>
-        <!-- <img [ngStyle]="styleObject()" src = "assets/images/bar.png"/> -->
+
         
     
     <select [(ngModel)] = "selectedAmount" (ngModelChange) ="selected($event)">
@@ -11,5 +11,5 @@
     </select>
     
     <button (click) = 'sort()' >Sort</button>
-    <p class='works'>Sorted in {{time}} Quick-sort works with time complexity O(nlogn)</p>    
+    <p class='works'>Sorted in {{time}}    Quick-sort works with time complexity O(nlogn)</p>    
 </body>

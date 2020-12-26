@@ -1,3 +1,4 @@
+
 .works {
     background-color: #baccda;
     border-color: #a9c2d4;
@@ -16,6 +17,20 @@
     opacity: 1;
     
 }
+
+@keyframes swap{
+  0%{background-color:red; left: 0px;} 
+  100%{background-color: red; left: var(--end);}
+}
+
+@keyframes swap2{
+  0%{background-color:red; left: 0px;}
+100%{background-color: red; left: var(--end2);}
+}
+div {
+position: relative;
+
+}
 .columncenter{
 display: flex;
 width: 99%;
@@ -32,6 +47,8 @@ align-content: center;}
     margin-left: 10px;
     align-items: center;
     align-content: center;
+    position: relative;
+   
   }
   button{
       display: block;
