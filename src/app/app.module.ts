@@ -4,23 +4,17 @@ import { FormsModule } from '@angular/forms';
 import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { QuickSortComponent } from './quick-sort/quick-sort.component';
-import { MergeSortComponent } from './merge-sort/merge-sort.component';
-import { HeapSortComponent } from './heap-sort/heap-sort.component';
-import { BubbleSortComponent } from './bubble-sort/bubble-sort.component';
-import { InsertionSortComponent } from './insertion-sort/insertion-sort.component';
 import { HeaderComponent } from './header/header.component';
+import { BaseComponent } from './base/base.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuickSortComponent,
-    MergeSortComponent,
-    HeapSortComponent,
-    BubbleSortComponent,
-    InsertionSortComponent,
-    HeaderComponent
+    HeaderComponent,
+    BaseComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

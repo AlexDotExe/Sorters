@@ -1,0 +1,23 @@
+<html>
+    <body> 
+    <h1>{{path}} Sort</h1>
+        <div class = "columncenter">
+            <div #refEl  *ngFor = "let item of dummy; let i = index;trackBy: trackByFn  "  [ngStyle] = 'styles[i]'  class =" bar">{{getSrc(i,refEl)}}</div>
+        </div>
+
+        <h2> Size of Array:</h2>
+        <select class = 'select-css' [(ngModel)] = "selectedAmount" (ngModelChange) ="selectAmount($event)">
+                <option *ngFor="let amount of amounts" [ngValue] ="amount" >{{amount}}</option>
+        </select>
+        
+    <h2>Speed of Swap :</h2>
+    <select class = 'select-css' [(ngModel)] = "selectedSpeed" >
+            <option *ngFor="let speed of speeds" [ngValue] ="speed" >{{speed}}</option>
+    </select>
+       
+        <button class = 'sort'(click) = 'sort()' >Sort</button><br>
+        <button class = 'reset' (click) = 'reset()' >Reset</button>
+        
+        <p class='works'>Sorted in {{time}}    {{path}}-sort works with time complexity O(nlogn)</p>    
+    </body>
+    </html>
