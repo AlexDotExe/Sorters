@@ -4,49 +4,54 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MergeSortService {
-
-  constructor() { }
+id:number;
+  constructor() {this.id = 0; }
   
- mergeSort(array:number[]):number[]{
+ mergeSort(swaps, array:number[]):number[]{
   if(array.length <=1){
     return array;
   }
   
-  const middle = Math.floor(array.length);
+  const middle = Math.floor(array.length/2);
   const left = array.slice(0, middle);
   const right = array.slice(middle);
   
-  console.log(array);
-  return this.merge(this.mergeSort(left),this.mergeSort(right));
+ 
+  return this.merge(swaps, this.mergeSort(swaps,left),this.mergeSort(swaps,right));
 }
 
-merge(left:number[], right:number[]):number[]{
+merge( swaps, left:number[], right:number[]):number[]{
   const array:number[] = [];
   let lIndex=0;
   let rIndex=0;
   
   while (lIndex + rIndex < left.length + right.length){
+    
     const lItem = left[lIndex];
     const rItem = right[rIndex];
     
     if(lItem == null){
       array.push(rItem);
+      swaps.push(this.id+','+(array.length-1)+','+rItem);
       rIndex++;
     }
     else if(rItem == null){
       array.push(lItem);
-      lIndex++;
+      swaps.push(this.id+','+(array.length-1)+','+lItem);
+      lIndex++; 
     }
     else if(lItem < rItem){
       array.push(lItem);
+      swaps.push(this.id+','+(array.length-1)+','+lItem);
       lIndex++;
     }
     else{
       array.push(rItem);
+      swaps.push(this.id+','+(array.length-1)+','+rItem);
       rIndex++;
     }
   }
-  console.log(array);
+  this.id++;
   return array;
 }
 

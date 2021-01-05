@@ -18,9 +18,7 @@
     opacity: 1;
     
 }
-select{
-  
-}
+
 h1{
   color: white;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -59,19 +57,19 @@ align-content: center;}
    
   }
   .sort{
-      display: block;
-      margin-left: 47%;
+      margin-left: 20%;
       transition-duration: 0.4s;
       border-radius: 2px;
       padding: 14px 40px;
       font-size: large;
       background-color: lime;
       color: white;
+      display: inline-flex;
   }
   .reset{
-    display: block;
-    margin-left: 47%;
-    transition-duration: 0.4s;
+    display: inline-flex;
+    margin-left: 20%;
+    transition-duration: 2.4s;
     border-radius: 2px;
     padding: 14px 40px;
     font-size: large;
@@ -81,10 +79,12 @@ align-content: center;}
   .reset:hover{
     background-color: cyan; /* Green */
     color: white;
+    
   }
   .sort:hover{
     background-color: cyan; /* Green */
     color: white;
+    
   }
   h2{
     color: white;
