@@ -57,18 +57,19 @@ align-content: center;}
    
   }
   .sort{
-      margin-left: 20%;
+      margin-left: 45%;
       transition-duration: 0.4s;
       border-radius: 2px;
       padding: 14px 40px;
       font-size: large;
-      background-color: lime;
+      background-color: rgb(26, 194, 26);
       color: white;
       display: inline-flex;
+      
   }
   .reset{
     display: inline-flex;
-    margin-left: 20%;
+    margin-left: 44.5%;
     transition-duration: 2.4s;
     border-radius: 2px;
     padding: 14px 40px;

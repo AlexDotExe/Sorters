@@ -1,10 +1,42 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <body>
-    <h1>Welcome to Alex's Sorter</h1>
-    <p>Many different websites exist that show how sorting algorithms work but they are often cluttered and with information you aren't neccessarily looking for. However the intention of this website to provide you animations so you can SEE for yourself how they work and in the event that you don't care to see how it works we've provided the best use cases for each below. </p>  
-<h1>Quick Sort</h1>
-<h1>Heap Sort</h1>
-<h1>Merge Sort</h1>
-<h1>Insertion Sort</h1>
-<h1>Bubble Sort</h1>
-<h1>Selection Sort </h1>
+    ​<div class="jumbotron text-center">
+    <h1>Welcome to Alex's Sorter</h1><h2 class = prompt>(Click on an algorithm in the Navbar to see it in action)</h2>
+    <p>Many different websites exist that show how sorting algorithms work but they are often cluttered and filled with information you aren't neccessarily looking for. However the intention of this website is to be short, sweet, and to the point. demo the algorithms and see their best use cases below  </p>  
+</div>
+<br><br>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+<div class = large>
+<h1 class = t1>For Large Datasets greater than 10,000 </h1>    
+<h2>Quick Sort</h2>
+<h3>When in doubt, go for Quick Sort. It's not named that for no reason you know. make sure you choose a random element as the pivot and you should have a O(nlogn) complexity.  </h3>
+<h2>Merge Sort</h2>
+<h3>Actually preferable to Quick Sort if you're sorting a linked list instead of an array AND easily supports multi-threading</h3>
+<h2>Heap Sort</h2>
+<h3>The slowest of the nlogn algorithms but unlike Merge or Quick Sort it doesn't take a massive amount of arrays or recursion, so if your space in memory is limited, Heap has your back</h3>
+</div> </div>
+
+<div class="col-sm-4">
+<div class = small>
+<h1 class = t1>For Small Datasets less than 10,000</h1>
+<h2>Insertion Sort</h2>
+<h3>Essentially identical to Bubble Sort, on a good day you'll sort items in O(n) but in the worst case you're looking at O(n^2). However if your dataset is small enough, this probably doesn't
+    matter to you and these are probably the easiest algorithms to remember how to write so if you need something quick and easy to debug choose one of these.
+</h3>
+<h2>Bubble Sort</h2>
+<h3>*see Insertion Sort </h3>
+</div> </div>
+<div class="col-sm-4">
+<h1 class = warn> DON'T USE</h1>
+<h2>Selection Sort </h2>
+<h3>No. No. Turn Around. Just Don't. Unless you have no regard for efficiency at all and enjoy creating unnecessary work for our A.I. overlords for some reason, you have no excuse to be using
+    Selection Sort. Best case scenario you get O(n^2). BEST CASE. enough said. </h3>
+</div>
+</div>
+</div>
 </body>

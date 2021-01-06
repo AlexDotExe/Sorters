@@ -1,12 +1,37 @@
 body{
-    color: white;
-  padding-top: 100px
+    background-color: black;
+  padding-top: 40px
+}
+.jumbotron{
+  background-color: rgba(81, 161, 172, 0.726);
+  color: white;
+}
+.col-sm-4{
+background-color: black;
+}
+.warn{
+  color :red;
+}
+.t1{
+  color: orange
+}
+.prompt{
+  color: red;
 }
 h1{
   color: white;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+h2{
+  color: cyan;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h3{
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 p{
   color: white;
+  font-size: large;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }

@@ -15,9 +15,10 @@
             <option *ngFor="let speed of speeds" [ngValue] ="speed" >{{speed}}</option>
     </select>
        <div>
-        <button class = 'sort'(click) = 'sort()' >Sort</button><br>
+           <br><br>
+        <button class = 'sort'(click) = 'sort()' >Sort</button><br><br>
         <button class = 'reset' (click) = 'reset()' >Reset</button>
     </div>
-        <p class='works'>Sorted in {{time}}    {{path}}-sort works with time complexity O(nlogn)</p>    
+        <p class='works'>Sorted in {{time}}    {{path}}-sort works with time complexity {{complexity}}</p>    
     </body>
     </html>

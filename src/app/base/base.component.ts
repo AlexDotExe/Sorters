@@ -7,6 +7,7 @@ import {BubbleSortService} from './bubble-sort.service';
 import {SelectSortService} from './select-sort.service';
 import {MergeSortService} from './merge-sort.service';
 import * as _ from 'lodash';
+import { calcPossibleSecurityContexts } from '@angular/compiler/src/template_parser/binding_parser';
 
 @Component({
   selector: 'app-base',
@@ -34,6 +35,7 @@ export class BaseComponent implements OnInit {
   speeds: string[];
   path: string;
   sorted : boolean; 
+  complexity: string;
 
 constructor(private qs:QuickSService,private ms:MergeSortService, private route:ActivatedRoute, private hs:HeapSortService, private is:InsertSortService, private bs:BubbleSortService, private ss:SelectSortService) { 
   this.amounts = [ 25, 50, 100, 1000];
@@ -45,6 +47,7 @@ constructor(private qs:QuickSService,private ms:MergeSortService, private route:
   this.time = '0';
   this.path = this.route.snapshot.url[0].path;
   this.sorted  = false;
+this.complexity = '';
   }
 
   ngOnInit(): void {
@@ -78,12 +81,12 @@ constructor(private qs:QuickSService,private ms:MergeSortService, private route:
 
   var begin=Date.now();
     switch(this.path){
-        case 'Quick':   this.qs.quickSort(this.swaps, this.nums,0, this.nums.length-1);break;
-        case 'Heap' :   this.hs.heapSort(this.swaps,this.nums);break;
-        case 'Insertion':  this.is.sort(this.swaps,this.nums);break;
-        case 'Bubble':  this.bs.bubbleSort(this.swaps,this.nums);break;
-        case 'Selection':  this.ss.selectionSort(this.swaps,this.nums);break;
-        case 'Merge':this.ms.mergeSort(this.swaps,this.nums);}
+        case 'Quick':  this.complexity='nLog(n)'; this.qs.quickSort(this.swaps, this.nums,0, this.nums.length-1);break;
+        case 'Heap' :   this.complexity='nLog(n)';this.hs.heapSort(this.swaps,this.nums);break;
+        case 'Insertion':  this.complexity='Log(n^2)'; this.is.sort(this.swaps,this.nums);break;
+        case 'Bubble':  this.complexity='Log(n^2)';this.bs.bubbleSort(this.swaps,this.nums);break;
+        case 'Selection':  this.complexity='Log(n^2)';this.ss.selectionSort(this.swaps,this.nums);break;
+        case 'Merge':this.complexity='nLog(n)'; this.ms.mergeSort(this.swaps,this.nums);}
     var end= Date.now();
     this.time = (end-begin)/1000+" ms";
     
@@ -259,6 +262,5 @@ sort() {
 timeout (ms) {
   return new Promise(res => setTimeout(res,ms));
 }
-//Animates the swap using the swap and dummy array
 
 }
